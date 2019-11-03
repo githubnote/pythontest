@@ -1,9 +1,10 @@
 import pymysql
 import re
 import os
+import sys
 
 
-class p_note_mysql:
+class p_note_mysql():
 
     def __init__(self,host, port, user, pw, mysqlName, my_table):
             self.host = host
@@ -18,15 +19,18 @@ class p_note_mysql:
         try:
             #连接数据库
             db = pymysql.connect(host, user, pw, mysqlName, port)
+            print("mysql connect.....ok")
             return db
 
         except pymysql.Error:
-            print("false")
+            print("mysql connect.....false")
+            os._exit(0)
 
 
 
     def cre_cursor(self,db):
         cursor = db.cursor()
+
 
         return cursor
 
@@ -57,7 +61,7 @@ class p_note_mysql:
     def clo_mydb(self,cursor,db):
         cursor.close()
         db.close()
-        
+
         print("end....")
 
 
