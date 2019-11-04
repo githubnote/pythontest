@@ -64,6 +64,23 @@ class p_note_mysql():
 
         print("end....")
 
+    def cre_field_mydb(self, cursor, p_table, p_field):
+        mysql_ord="describe "+p_table+" "+p_field
+        if cursor.execute(mysql_ord):
+            print("field ....ok")
+        else:
+            print("field...false")
+            os.system("pause")
+            cre_field_ord="ALTER TABLE "+p_table+" "+"ADD COLUMN "+p_field+" INT(20)"
+            cursor.execute(cre_field_ord)
+            print("ok")
+
+    def insert_db(self, cursor, p_table, p_field):
+        for i in range(1001):
+            insert_ord="insert into %s(%s) values(%d)"%(p_table,p_field,i)
+            cursor.execute(insert_ord)
+            print("insert ...ok")
+
 
 
 
@@ -81,4 +98,6 @@ if __name__ == "__main__":
     if my_test.is_mydb(my_db_cursor, my_test.my_table) == False:
         my_test.cre_mydb(my_db_cursor, my_test.my_table)
     os.system("pause")
+    my_test.cre_field_mydb(my_db_cursor, my_test.my_table, "f_test")
+    #my_test.insert_db(my_db_cursor,my_test.my_table,"f_test")
     my_test.clo_mydb(my_db_cursor,my_db_state)
