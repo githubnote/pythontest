@@ -6,3 +6,5 @@ import dbm
 import struct
 import MySQLdb
 
+print("!23")
+
