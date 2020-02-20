@@ -8,4 +8,3 @@ import MySQLdb
 
 print("!23")
 
-asfas 
