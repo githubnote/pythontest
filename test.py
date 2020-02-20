@@ -8,4 +8,9 @@ import MySQLdb
 
 print("!23")
 
-adfasf sasadfasf
+try:
+    pass
+except expression as identifier:
+    pass
+else:
+    pass
