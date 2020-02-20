@@ -8,9 +8,3 @@ import MySQLdb
 
 print("!23")
 
-try:
-    pass
-except expression as identifier:
-    pass
-else:
-    pass
