@@ -48,7 +48,7 @@ def find_24():
                 for s3 in symbols:
                     if s1+s2+s3 == "+++" or s1+s2+s3 == "***":
                         express = ["{0} {1} {2} {3} {4} {5} {6}".format(
-                            one, s1, two, s2, three, s3, four)]  // 全加或者乘时，括号已经没有意义。
+                            one, s1, two, s2, three, s3, four)] 
                     else:
                         express = ["(({0} {1} {2}) {3} {4}) {5} {6}".format(one, s1, two, s2, three, s3, four),
                                    "({0} {1} {2}) {3} ({4} {5} {6})".format(
