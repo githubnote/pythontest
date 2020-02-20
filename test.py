@@ -7,7 +7,4 @@ import struct
 import MySQLdb
 
 print("!23")
-
-
-
-
+print( "asfsafdaf ")
