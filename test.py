@@ -32,6 +32,3 @@ if __name__ == "__main__":
     os.system("pause")
     for i in arr_end:
         print(i)
-
-
-        

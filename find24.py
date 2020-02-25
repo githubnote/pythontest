@@ -1,38 +1,14 @@
-import numpy as np
 from itertools import permutations
-
-def input_num():
-    try:
-        tmp = int(input())
-        return tmp
-    except:
-        print("请重新输入.....")
-        return input_num()
+import numpy as np
 
 
-def find_24():
-    print("请输入第1个数字:")
-    a=input_num()
+def test():
 
-
-    print("请输入第2个数字:")
-    b=input_num()
-    print("请输入第3个数字:")
-    c=input_num()
-    print("请输入第4个数字:")
-    d=input_num()
-
-
-
-
-
-
+    a = int(input("请输入第1个数字:"))
+    b = int(input("请输入第2个数字:"))
+    c = int(input("请输入第3个数字:"))
+    d = int(input("请输入第4个数字:"))
     list1 = [a, b, c, d]
-
-
-
-
-
     p = [c for c in permutations(list1, 4)]
 
     symbols = ["+", "-", "*", "/"]
@@ -48,7 +24,7 @@ def find_24():
                 for s3 in symbols:
                     if s1+s2+s3 == "+++" or s1+s2+s3 == "***":
                         express = ["{0} {1} {2} {3} {4} {5} {6}".format(
-                            one, s1, two, s2, three, s3, four)] 
+                            one, s1, two, s2, three, s3, four)]  // 全加或者乘时，括号已经没有意义。
                     else:
                         express = ["(({0} {1} {2}) {3} {4}) {5} {6}".format(one, s1, two, s2, three, s3, four),
                                    "({0} {1} {2}) {3} ({4} {5} {6})".format(
@@ -69,18 +45,15 @@ def find_24():
 
     list3 = set(list2)  // 去除重复项
 
-    if flag == False:
-        print("无法算出")
-        print("继续......y/n?")
-
-        if input() == "y":
-            find_24()
-
     for c in list3:
+
         print(c)
-        print()
-    print("ok!")
+
+    if flag == False:
+
+        print("无法算出")
 
 
 if __name__ == "__main__":
-    find_24()
+
+    test()
